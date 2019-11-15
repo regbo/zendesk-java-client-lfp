@@ -134,7 +134,7 @@ public class Zendesk implements Closeable {
        return Collections.unmodifiableMap(result);
     }
 
-    private Zendesk(AsyncHttpClient client, String url, String username, String password) {
+    protected Zendesk(AsyncHttpClient client, String url, String username, String password) {
         this.logger = LoggerFactory.getLogger(Zendesk.class);
         this.closeClient = client == null;
         this.oauthToken = null;
@@ -155,7 +155,7 @@ public class Zendesk implements Closeable {
     }
 
 
-    private Zendesk(AsyncHttpClient client, String url, String oauthToken) {
+    protected Zendesk(AsyncHttpClient client, String url, String oauthToken) {
         this.logger = LoggerFactory.getLogger(Zendesk.class);
         this.closeClient = client == null;
         this.realm = null;
