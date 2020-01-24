@@ -1,10 +1,10 @@
 package org.zendesk.client.v2.model.events;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+import java.io.Serializable;
 
 /**
  * @author stephenc
@@ -50,10 +50,8 @@ public abstract class Event implements Serializable {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("Event");
-        sb.append("{id=").append(id);
-        sb.append('}');
-        return sb.toString();
+        return "Event" +
+                "{id=" + id +
+                '}';
     }
 }
