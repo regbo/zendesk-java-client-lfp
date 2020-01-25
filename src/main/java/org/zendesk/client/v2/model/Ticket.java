@@ -17,7 +17,6 @@ public class Ticket extends Request implements SearchResultEntity {
 
     private String externalId;
     private Type type;
-    private Priority priority;
     private String recipient;
     private Long submitterId;
     private Long assigneeId;
@@ -141,15 +140,7 @@ public class Ticket extends Request implements SearchResultEntity {
     public void setHasIncidents(boolean hasIncidents) {
         this.hasIncidents = hasIncidents;
     }
-
-    public Priority getPriority() {
-        return priority;
-    }
-
-    public void setPriority(Priority priority) {
-        this.priority = priority;
-    }
-
+    
     @JsonProperty("problem_id")
     public Long getProblemId() {
         return problemId;
@@ -258,7 +249,6 @@ public class Ticket extends Request implements SearchResultEntity {
                 ", type='" + type + '\'' +
                 ", subject='" + subject + '\'' +
                 ", description='" + description + '\'' +
-                ", priority='" + priority + '\'' +
                 ", status='" + status + '\'' +
                 ", recipient='" + recipient + '\'' +
                 ", requesterId=" + requesterId +
