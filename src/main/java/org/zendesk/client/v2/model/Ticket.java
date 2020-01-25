@@ -16,7 +16,6 @@ public class Ticket extends Request implements SearchResultEntity {
     private static final long serialVersionUID = 1L;
 
     private String externalId;
-    private Type type;
     private String recipient;
     private Long submitterId;
     private Long assigneeId;
@@ -28,7 +27,6 @@ public class Ticket extends Request implements SearchResultEntity {
     private boolean hasIncidents;
     private Date dueAt;
     private List<String> tags;
-    private List<CustomFieldValue> customFields;
     private SatisfactionRating satisfactionRating;
     private List<Long> sharingAgreementIds;
     private List<Long> followupIds;
@@ -76,15 +74,6 @@ public class Ticket extends Request implements SearchResultEntity {
 
     public void setCollaborators(List<Collaborator> collaborators) {
         this.collaborators = collaborators;
-    }
-
-    @JsonProperty("custom_fields")
-    public List<CustomFieldValue> getCustomFields() {
-        return customFields;
-    }
-
-    public void setCustomFields(List<CustomFieldValue> customFields) {
-        this.customFields = customFields;
     }
 
     @JsonProperty("due_at")
@@ -222,14 +211,6 @@ public class Ticket extends Request implements SearchResultEntity {
         this.ticketFormId = ticketFormId;
     }
 
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
     @JsonProperty("is_public")
     public Boolean getIsPublic() {
         return isPublic;
@@ -246,7 +227,6 @@ public class Ticket extends Request implements SearchResultEntity {
                 ", id=" + id +
                 ", url='" + url + '\'' +
                 ", externalId='" + externalId + '\'' +
-                ", type='" + type + '\'' +
                 ", subject='" + subject + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
@@ -262,7 +242,6 @@ public class Ticket extends Request implements SearchResultEntity {
                 ", dueAt=" + dueAt +
                 ", tags=" + tags +
                 ", via=" + via +
-                ", customFields=" + customFields +
                 ", satisfactionRating=" + satisfactionRating +
                 ", sharingAgreementIds=" + sharingAgreementIds +
                 ", followupIds=" + followupIds +
